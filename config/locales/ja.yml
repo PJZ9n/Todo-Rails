@@ -1,0 +1,69 @@
+---
+ja:
+  activerecord:
+    attributes:
+      todo:
+        detail: 詳細
+        limit: 期限
+        state: 状態
+        title: タイトル
+    models:
+      todo: Todo
+  date:
+    month_names:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+    order:
+      - :year
+      - :month
+      - :day
+  enums:
+    todo:
+      state:
+        progress: 進行中
+        success: 完了
+  errors:
+    messages:
+      blank: を入力してください
+  todos:
+    create:
+      successfully_created: Todoの作成に成功しました
+    destroy:
+      successfully_destroyed: Todoの削除に成功しました
+    edit:
+      back: 戻る
+      show: 閲覧
+      title: Todoの編集
+    form:
+      error: "%{count}個のエラーが発生しました"
+    index:
+      are_you_sure: 本当によろしいですか？
+      destroy: 削除
+      edit: 編集
+      mark_progress: 進行中にする
+      mark_success: 完了させる
+      new_todo: Todoを作成
+      show: 閲覧
+      title: Todoリスト
+    new:
+      back: 戻る
+      title: Todoの作成
+    show:
+      back: 戻る
+      detail: 詳細
+      edit: 編集
+      limit: 期限
+      state: 状態
+      title: タイトル
+    update:
+      successfully_updated: Todoの更新に成功しました

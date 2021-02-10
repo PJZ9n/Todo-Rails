@@ -1,7 +1,7 @@
 <%= form_with(model: todo, local: true) do |form| %>
   <% if todo.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(todo.errors.count, "error") %> prohibited this todo from being saved:</h2>
+      <h2><%= t('.error', count: todo.errors.count) %>:</h2>
 
       <ul>
         <% todo.errors.full_messages.each do |message| %>
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :state %>
-    <%= form.select :state, Todo.states.keys.to_a %>
+    <%= form.select :state, Todo.states_i18n.invert %>
   </div>
 
   <div class="field">

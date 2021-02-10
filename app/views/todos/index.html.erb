@@ -1,14 +1,14 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Todos</h1>
+<h1><%= t('.title') %></h1>
 
 <table>
   <thead>
   <tr>
-    <th>Title</th>
-    <th>Detail</th>
-    <th>State</th>
-    <th>Limit</th>
+    <th><%= Todo.human_attribute_name :title %></th>
+    <th><%= Todo.human_attribute_name :detail %></th>
+    <th><%= Todo.human_attribute_name :state %></th>
+    <th><%= Todo.human_attribute_name :limit %></th>
     <th colspan="3"></th>
   </tr>
   </thead>
@@ -18,15 +18,15 @@
     <tr>
       <td><%= todo.title %></td>
       <td><%= todo.detail %></td>
-      <td><%= todo.state %></td>
+      <td><%= todo.state_i18n %></td>
       <td><%= todo.limit %></td>
-      <td><%= link_to 'Show', todo %></td>
-      <td><%= link_to 'Edit', edit_todo_path(todo) %></td>
-      <td><%= link_to 'Destroy', todo, method: :delete, data: {confirm: 'Are you sure?'} %></td>
+      <td><%= link_to t('.show'), todo %></td>
+      <td><%= link_to t('.edit'), edit_todo_path(todo) %></td>
+      <td><%= link_to t('.destroy'), todo, method: :delete, data: {confirm: t('.are_you_sure')} %></td>
       <% if todo.progress? %>
-        <td><%= link_to 'Mark Success', todo_path(todo, todo: {state: :success}), method: :put %></td>
+        <td><%= link_to t('.mark_success'), todo_path(todo, todo: {state: :success}), method: :put %></td>
       <% else %>
-        <td><%= link_to 'Mark Progress', todo_path(todo, todo: {state: :progress}), method: :put %></td>
+        <td><%= link_to t('.mark_progress'), todo_path(todo, todo: {state: :progress}), method: :put %></td>
       <% end %>
     </tr>
   <% end %>
@@ -35,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Todo', new_todo_path %>
+<%= link_to t('.new_todo'), new_todo_path %>

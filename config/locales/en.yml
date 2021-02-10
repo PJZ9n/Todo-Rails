@@ -1,33 +1,71 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t 'hello'
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t('hello') %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   'true': 'foo'
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
+---
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      todo:
+        detail: Detail
+        limit: Limit
+        state: State
+        title: Title
+    models:
+      todo: Todo
+  date:
+    month_names:
+      - 1
+      - 2
+      - 3
+      - 4
+      - 5
+      - 6
+      - 7
+      - 8
+      - 9
+      - 10
+      - 11
+      - 12
+    order:
+      - :year
+      - :month
+      - :day
+  enums:
+    todo:
+      state:
+        progress: In progress
+        success: Finished
+  errors:
+    messages:
+      blank: can't be blank
+  todos:
+    create:
+      successfully_created: Todo was successfully created
+    destroy:
+      successfully_destroyed: Todo was successfully destroyed
+    edit:
+      back: Back
+      show: Show
+      title: Edit Todo
+    form:
+      error:
+        one: "%{count} error prohibited this todo from being saved"
+        other: "%{count} errors prohibited this todo from being saved"
+    index:
+      are_you_sure: Are you sure?
+      destroy: Destroy
+      edit: Edit
+      mark_progress: Mark Progress
+      mark_success: Mark Success
+      new_todo: New Todo
+      show: Show
+      title: Todo List
+    new:
+      back: Back
+      title: New Todo
+    show:
+      back: Back
+      detail: Detail
+      edit: Edit
+      limit: Limit
+      state: State
+      title: Title
+    update:
+      successfully_updated: Todo was successfully updated
