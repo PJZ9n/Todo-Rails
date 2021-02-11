@@ -55,6 +55,7 @@ en:
       mark_progress: Mark Progress
       mark_success: Mark Success
       new_todo: New Todo
+      no_todos: There is no Todo
       show: Show
       title: Todo List
     new:

@@ -2,36 +2,40 @@
 
 <h1><%= t('.title') %></h1>
 
-<table>
-  <thead>
-  <tr>
-    <th><%= Todo.human_attribute_name :title %></th>
-    <th><%= Todo.human_attribute_name :detail %></th>
-    <th><%= Todo.human_attribute_name :state %></th>
-    <th><%= Todo.human_attribute_name :limit %></th>
-    <th colspan="3"></th>
-  </tr>
-  </thead>
+<% if @todos.size > 0 %>
+  <table>
+    <thead>
+      <tr>
+        <th><%= Todo.human_attribute_name :title %></th>
+        <th><%= Todo.human_attribute_name :detail %></th>
+        <th><%= Todo.human_attribute_name :state %></th>
+        <th><%= Todo.human_attribute_name :limit %></th>
+        <th colspan="3"></th>
+      </tr>
+    </thead>
 
-  <tbody>
-  <% @todos.each do |todo| %>
-    <tr>
-      <td><%= todo.title %></td>
-      <td><%= todo.detail %></td>
-      <td><%= todo.state_i18n %></td>
-      <td><%= todo.limit %></td>
-      <td><%= link_to t('.show'), todo %></td>
-      <td><%= link_to t('.edit'), edit_todo_path(todo) %></td>
-      <td><%= link_to t('.destroy'), todo, method: :delete, data: {confirm: t('.are_you_sure')} %></td>
-      <% if todo.progress? %>
-        <td><%= link_to t('.mark_success'), todo_path(todo, todo: {state: :success}), method: :put %></td>
-      <% else %>
-        <td><%= link_to t('.mark_progress'), todo_path(todo, todo: {state: :progress}), method: :put %></td>
+    <tbody>
+      <% @todos.each do |todo| %>
+        <tr>
+          <td><%= todo.title %></td>
+          <td><%= todo.detail %></td>
+          <td><%= todo.state_i18n %></td>
+          <td><%= todo.limit %></td>
+          <td><%= link_to t('.show'), todo %></td>
+          <td><%= link_to t('.edit'), edit_todo_path(todo) %></td>
+          <td><%= link_to t('.destroy'), todo, method: :delete, data: {confirm: t('.are_you_sure')} %></td>
+          <% if todo.progress? %>
+            <td><%= link_to t('.mark_success'), todo_path(todo, todo: {state: :success}), method: :put %></td>
+          <% else %>
+            <td><%= link_to t('.mark_progress'), todo_path(todo, todo: {state: :progress}), method: :put %></td>
+          <% end %>
+        </tr>
       <% end %>
-    </tr>
-  <% end %>
-  </tbody>
-</table>
+    </tbody>
+  </table>
+<% else %>
+  <p><%= t(".no_todos") %></p>
+<% end %>
 
 <br>
 

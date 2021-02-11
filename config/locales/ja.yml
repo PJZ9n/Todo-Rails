@@ -53,6 +53,7 @@ ja:
       mark_progress: 進行中にする
       mark_success: 完了させる
       new_todo: Todoを作成
+      no_todos: Todoはありません
       show: 閲覧
       title: Todoリスト
     new:
