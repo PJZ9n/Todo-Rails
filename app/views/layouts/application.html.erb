@@ -11,6 +11,12 @@
 
   <body>
     <%= yield %>
+    <hr>
+    Languages:
+    <% I18n.available_locales.each do |locale| %>
+      <%= link_to locale, todos_path(locale: locale) %>
+    <% end %>
+    <hr>
     <p>Copyright PJZ9n all rights reserved.</p>
   </body>
 </html>
