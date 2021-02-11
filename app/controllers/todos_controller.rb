@@ -3,7 +3,7 @@ class TodosController < ApplicationController
 
   # GET /todos
   def index
-    @todos = Todo.all.order(limit: "DESC")
+    @todos = Todo.order(limit: "DESC")
   end
 
   # GET /todos/1
