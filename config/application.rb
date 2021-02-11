@@ -17,5 +17,6 @@ module TodoRails
     # the framework and any gems in your application.
 
     config.i18n.default_locale = :ja
+    config.i18n.available_locales = [:ja, :en] # 追加した覚えのない言語が勝手に追加されることを防ぐため
   end
 end
