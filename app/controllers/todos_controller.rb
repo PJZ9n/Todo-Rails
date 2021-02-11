@@ -1,12 +1,12 @@
 class TodosController < ApplicationController
   before_action :set_todo, only: %i[ show edit update destroy ]
 
-  # GET /todos or /todos.json
+  # GET /todos
   def index
     @todos = Todo.all.order(limit: "DESC")
   end
 
-  # GET /todos/1 or /todos/1.json
+  # GET /todos/1
   def show
   end
 
